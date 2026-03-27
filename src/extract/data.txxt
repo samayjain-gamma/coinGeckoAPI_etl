@@ -1,0 +1,68 @@
+id: bitcoin
+symbol: btc
+name: Bitcoin
+image: https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png?1696501400
+current_price: 6285701
+market_cap: 125707495998351
+market_cap_rank: 1
+fully_diluted_valuation: 125707495998351
+total_volume: 4776021743737
+high_24h: 6558337
+low_24h: 6285641
+price_change_24h: -252768.86986397486
+price_change_percentage_24h: -3.86587
+market_cap_change_24h: -5044654301314.328
+market_cap_change_percentage_24h: -3.85818
+circulating_supply: 20003043.0
+total_supply: 20003043.0
+max_supply: 21000000.0
+ath: 11187013
+ath_change_percentage: -43.81252
+ath_date: 2025-10-06T18:57:42.558Z
+atl: 3993.42
+atl_change_percentage: 157301.46903
+atl_date: 2013-07-05T00:00:00.000Z
+roi: None
+last_updated: 2026-03-27T11:05:22.057Z
+
+
+(coins, prices, market_data)
+
+
+id
+symbol
+name
+current_price
+market_cap
+total_volume
+market_cap_rank
+last_updated
+
+
+
+| column  | type    | description                 |
+| ------- | ------- | --------------------------- |
+| coin_id | VARCHAR | primary identifier from API |
+| symbol  | VARCHAR | BTC, ETH                    |
+| name    | VARCHAR | coin name                   |
+
+
+
+
+| column      | type      |
+| ----------- | --------- |
+| price_id    | SERIAL    |
+| coin_id     | FK        |
+| price       | NUMERIC   |
+| recorded_at | TIMESTAMP |
+
+
+
+| column          | type      |
+| --------------- | --------- |
+| market_id       | SERIAL    |
+| coin_id         | FK        |
+| market_cap      | NUMERIC   |
+| total_volume    | NUMERIC   |
+| market_cap_rank | INT       |
+| recorded_at     | TIMESTAMP |
