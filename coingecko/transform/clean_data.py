@@ -1,6 +1,6 @@
 import logging
 
-from src.extract.extract_data import fetch_top_50_cryptos
+from coingecko.extract.extract_data import fetch_top_50_cryptos
 
 
 def clean_crypto_data(raw_data):

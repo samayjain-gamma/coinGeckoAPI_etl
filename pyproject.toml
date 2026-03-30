@@ -12,3 +12,8 @@ dependencies = [
     "requests>=2.33.0",
     "sqlalchemy>=2.0.48",
 ]
+
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["coingecko"]
