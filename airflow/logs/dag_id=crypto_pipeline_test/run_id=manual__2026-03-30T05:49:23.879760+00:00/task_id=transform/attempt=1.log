@@ -1,0 +1,12 @@
+{"timestamp":"2026-03-30T05:49:29.336975Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2026-03-30T05:49:29.338936Z","level":"info","event":"Filling up the DagBag from /home/my/data_engineering/coinGeckoAPI_etl/airflow/dags/crypto_etl_dag.py","logger":"airflow.models.dagbag.BundleDagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2026-03-30T05:49:29.349984Z","level":"info","event":"Stats instance was created in PID 40459 but accessed in PID 46218. Re-initializing.","logger":"airflow.stats","filename":"stats.py","lineno":57}
+{"timestamp":"2026-03-30T05:49:29.393912Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2026-03-30T05:49:29.394069Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2026-03-30T05:49:29.394263Z","level":"info","event":"Current task name:transform","logger":"task.stdout"}
+{"timestamp":"2026-03-30T05:49:29.394377Z","level":"info","event":"Dag name:crypto_pipeline_test","logger":"task.stdout"}
+{"timestamp":"2026-03-30T05:49:29.396142Z","level":"info","event":"Transform running","logger":"task.stdout"}
+{"timestamp":"2026-03-30T05:49:29.396281Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":229}
+{"timestamp":"2026-03-30T05:49:29.420912Z","level":"info","event":"Task instance in success state","logger":"task.stdout"}
+{"timestamp":"2026-03-30T05:49:29.421056Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","logger":"task.stdout"}
+{"timestamp":"2026-03-30T05:49:29.421190Z","level":"info","event":"Task operator:<Task(PythonOperator): transform>","logger":"task.stdout"}

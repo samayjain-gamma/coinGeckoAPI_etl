@@ -1,0 +1,40 @@
+coinGecko_crypto_pipeline/
+│
+|
+├── airflow/
+│   ├── dags/
+│   │   └── crypto_etl_dag.py
+│   │
+│   ├── logs/
+│   │
+│   └── airflow.cfg
+│
+├── src/
+│   ├── extract/
+│   │   └── extract_coingecko.py
+│   │
+│   ├── transform/
+│   │   ├── clean_data.py
+│   │   └── normalize_data.py
+│   │
+│   ├── load/
+│   │   └── load_to_db.py
+│   │
+│   ├── alert/
+│   │   ├── price_change_detector.py
+│   │   └── send_email.py
+│   │
+│   └── utils/
+│       ├── db.py
+│       ├── logger.py
+│       └── config.py
+│
+│
+├── db/
+│   ├── create_tables.sql
+│   └── indexes.sql
+│
+│
+├── requirements.txt
+├── .env
+└── README.md
