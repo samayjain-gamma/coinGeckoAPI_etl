@@ -18,8 +18,7 @@ coinGecko_crypto_pipeline/
 │   │   └── normalize_data.py
 │   │
 │   ├── load/
-│   │   └── load_to_db.py
-│   │
+│   │   
 │   ├── alert/
 │   │   ├── price_change_detector.py
 │   │   └── send_email.py
@@ -38,3 +37,28 @@ coinGecko_crypto_pipeline/
 ├── requirements.txt
 ├── .env
 └── README.md
+
+
+
+
+coins -
+| coin_id  | name     |
+| -------- | -------- |
+| bitcoin  | Bitcoin  |
+| ethereum | Ethereum |
+
+prices -
+| coin_id  | price | last_updated     |
+| -------- | ----- | ---------------- |
+| bitcoin  | 62857 | 2026-03-30 10:00 |
+| ethereum | 3210  | 2026-03-30 10:00 |
+
+market_data -
+| coin_id | market_cap | total_volume | rank |
+| ------- | ---------- | ------------ | ---- |
+| bitcoin | 1.25T      | 47B          | 1    |
+
+
+
+H7KIjRx4BjW2DzyR
+

@@ -1,4 +1,5 @@
 import logging
+from datetime import datetime, timezone
 
 from coingecko.extract.extract_data import fetch_top_50_cryptos
 from coingecko.transform.clean_data import clean_crypto_data
@@ -23,11 +24,18 @@ def normalize_crypto_data(clean_data):
 
         coins.append({"coin_id": coin_id, "name": coin.get("name")})
 
+        last_updated_str = coin.get("last_updated")
+
+        last_updated = datetime.fromisoformat(last_updated_str.replace("Z", "+00:00"))
+
+        # last_updated = datetime.fromisoformat(
+        #     last_updated_str.replace("Z", "+00:00")
+        #     )
         prices.append(
             {
                 "coin_id": coin_id,
                 "price": coin.get("price"),
-                "last_updated": coin.get("last_updated"),
+                "last_updated": last_updated,
             }
         )
 

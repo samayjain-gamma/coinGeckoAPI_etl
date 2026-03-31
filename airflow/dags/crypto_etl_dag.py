@@ -7,10 +7,6 @@ from coingecko.extract.extract_data import fetch_top_50_cryptos
 from coingecko.transform.clean_data import clean_crypto_data
 from coingecko.transform.normalize_data import normalize_crypto_data
 
-# -----------------------------
-# Wrapper functions for tasks
-# -----------------------------
-
 
 def extract_task(**context):
     data = fetch_top_50_cryptos()

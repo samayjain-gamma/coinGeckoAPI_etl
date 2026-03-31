@@ -15,7 +15,7 @@ class Price(Base):
 
     coin_id = Column(String, primary_key=True)
     price = Column(Float, nullable=False)
-    last_updated = Column(DateTime)
+    last_updated = Column(DateTime(timezone=True))
 
 
 class MarketData(Base):
