@@ -13,3 +13,4 @@ wheels/
 .git
 uv.lock
 .env
+Research/

@@ -17,7 +17,7 @@ def clean_crypto_data(raw_data):
         symbol = coin.get("symbol")
         price = coin.get("current_price")
 
-        if not coin_id or not symbol or price is None:
+        if not coin_id or price is None:
             logging.warning(f"Skipping record due to missing fields: {coin}")
             continue
 

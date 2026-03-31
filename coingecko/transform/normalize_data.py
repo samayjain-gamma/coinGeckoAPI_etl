@@ -28,9 +28,6 @@ def normalize_crypto_data(clean_data):
 
         last_updated = datetime.fromisoformat(last_updated_str.replace("Z", "+00:00"))
 
-        # last_updated = datetime.fromisoformat(
-        #     last_updated_str.replace("Z", "+00:00")
-        #     )
         prices.append(
             {
                 "coin_id": coin_id,
