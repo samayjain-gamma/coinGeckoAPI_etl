@@ -32,7 +32,7 @@ async def load_to_db(normalized_data):
 
     async with SessionLocal() as session:
 
-        if not coins:
+        if coins:
 
             query = insert(Coin).values(coins)
 
@@ -68,7 +68,7 @@ async def load_to_db(normalized_data):
                         }
                     )
 
-        if not prices:
+        if prices:
 
             query = insert(Price).values(prices)
 
@@ -82,7 +82,7 @@ async def load_to_db(normalized_data):
 
             await session.execute(query)
 
-        if not market_data:
+        if market_data:
 
             query = insert(MarketData).values(market_data)
 
@@ -99,12 +99,7 @@ async def load_to_db(normalized_data):
 
         await session.commit()
 
-    return {
-        # "coins_loaded": len(coins),
-        # "prices_loaded": len(prices),
-        # "market_data_loaded": len(market_data),
-        "alerts": alerts
-    }
+    return alerts
 
 
 if __name__ == "__main__":

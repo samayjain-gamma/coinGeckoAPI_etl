@@ -1,9 +1,12 @@
+import asyncio
 from datetime import datetime
 
 from airflow.providers.standard.operators.python import PythonOperator
 
 from airflow import DAG
+from coingecko.alerts.alert_service import process_prize_alert
 from coingecko.extract.extract_data import fetch_top_50_cryptos
+from coingecko.load.load_to_db import load_to_db
 from coingecko.transform.clean_data import clean_crypto_data
 from coingecko.transform.normalize_data import normalize_crypto_data
 
@@ -33,18 +36,29 @@ def normalize_task(**context):
     return normalized
 
 
-def dummy_task_1():
-    print("Dummy task 1 executed")
+def load_task(**context):
+    ti = context["ti"]
+
+    normalized_data = ti.xcom_pull(task_ids="normalize_task")
+
+    loaded_data = asyncio.run(load_to_db(normalized_data=normalized_data))
+    return loaded_data
 
 
-def dummy_task_2():
-    print("Dummy task 2 executed")
+def alert_task(**context):
+    ti = context["ti"]
+
+    load_result = ti.xcom_pull(task_ids="load_task")
+
+    alerts = load_result
+
+    process_prize_alert(alerts)
 
 
 with DAG(
     dag_id="crypto_price_pipeline",
     start_date=datetime(2026, 3, 30, 10, 0),
-    schedule="*/2 * * * *",
+    schedule="*/3 * * * *",
     catchup=False,
     tags=["crypto", "etl"],
 ) as dag:
@@ -64,14 +78,8 @@ with DAG(
         python_callable=normalize_task,
     )
 
-    dummy1 = PythonOperator(
-        task_id="dummy_task_1",
-        python_callable=dummy_task_1,
-    )
+    load_data = PythonOperator(task_id="load_data", python_callable=load_task)
 
-    dummy2 = PythonOperator(
-        task_id="dummy_task_2",
-        python_callable=dummy_task_2,
-    )
+    send_alerts = PythonOperator(task_id="send_alerts", python_callable=alert_task)
 
-    extract >> clean >> normalize >> dummy1 >> dummy2
+    extract >> clean >> normalize >> load_data >> send_alerts

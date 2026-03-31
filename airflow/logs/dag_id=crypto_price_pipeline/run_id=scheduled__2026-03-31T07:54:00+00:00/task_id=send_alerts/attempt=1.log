@@ -1,0 +1,13 @@
+{"timestamp":"2026-03-31T07:54:08.800528Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2026-03-31T07:54:08.801143Z","level":"info","event":"Filling up the DagBag from /home/my/data_engineering/coinGeckoAPI_etl/airflow/dags/crypto_etl_dag.py","logger":"airflow.models.dagbag.BundleDagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2026-03-31T07:54:08.866698Z","level":"info","event":"hello","logger":"task.stdout"}
+{"timestamp":"2026-03-31T07:54:08.902552Z","level":"info","event":"Stats instance was created in PID 325928 but accessed in PID 330894. Re-initializing.","logger":"airflow.stats","filename":"stats.py","lineno":57}
+{"timestamp":"2026-03-31T07:54:08.925034Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2026-03-31T07:54:08.925162Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2026-03-31T07:54:08.925267Z","level":"info","event":"Current task name:send_alerts","logger":"task.stdout"}
+{"timestamp":"2026-03-31T07:54:08.925331Z","level":"info","event":"Dag name:crypto_price_pipeline","logger":"task.stdout"}
+{"timestamp":"2026-03-31T07:54:08.937458Z","level":"info","event":"No alerts detected","logger":"task.stdout"}
+{"timestamp":"2026-03-31T07:54:08.937714Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":229}
+{"timestamp":"2026-03-31T07:54:08.954118Z","level":"info","event":"Task instance in success state","logger":"task.stdout"}
+{"timestamp":"2026-03-31T07:54:08.954241Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","logger":"task.stdout"}
+{"timestamp":"2026-03-31T07:54:08.954408Z","level":"info","event":"Task operator:<Task(PythonOperator): send_alerts>","logger":"task.stdout"}
